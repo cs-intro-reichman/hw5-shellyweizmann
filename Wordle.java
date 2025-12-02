@@ -31,7 +31,7 @@ public class Wordle {
     public static String chooseSecretWord(String[] dict) {
 		int n = dict.length; 
         Random random = new Random();
-        int randomNumber = random.nextInt(n-1);
+        int randomNumber = random.nextInt(n); //used to be n-1
         //System.out.println("n - 1 = " + (n-1) );
        // System.out.println("length = " + n);
        // System.out.println("random number= " + randomNumber);
