@@ -31,7 +31,8 @@ public class Wordle {
     public static String chooseSecretWord(String[] dict) {
 		int n = dict.length; 
         Random random = new Random();
-        int randomNumber = random.nextInt(n + 1);
+        int randomNumber = random.nextInt(n-1);
+        //System.out.println("n - 1 = " + (n-1) );
        // System.out.println("length = " + n);
        // System.out.println("random number= " + randomNumber);
        String secret;
@@ -59,8 +60,11 @@ public class Wordle {
             if(guess.charAt(i) == secret.charAt(i)){
                 resultRow[i] = 'G';
             }
-        else if(containsChar(guess,secret.charAt(i))){
-            resultRow[i] = 'Y';
+        //else if(containsChar(guess,secret.charAt(i))){
+        //    resultRow[i] = 'Y';
+        //    }
+        else if (containsChar(secret, guess.charAt(i))) {
+        resultRow[i] = 'Y';
             }
         else{
             resultRow[i] = '_';
